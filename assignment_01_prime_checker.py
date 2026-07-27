@@ -33,5 +33,16 @@
 
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
-# =============================================================================
+# ==========================================================================
 
+def is_prime(num):
+    num = int(input())
+    if num <= 1:
+       return False
+
+    for i in range(2, n):
+        if num % i == 0:
+           return "{} is NOT a prime number".format(num)
+    else:
+        return "{} is a prime number".format(num)
+        
