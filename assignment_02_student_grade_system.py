@@ -46,7 +46,7 @@
 # =============================================================================
 
 
-def grade(score):
+def get_grade(score):
     if score < 0 or score > 100:
         return "Error: Score must be between 0 and 100."
     elif score >= 80:
@@ -61,4 +61,4 @@ def grade(score):
         return "Grade: F"
 
 score = int(input("Enter student score (0-100): "))
-print(grade(score))
+print(get_grade(score))
