@@ -60,3 +60,59 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+def read_matrix(rows, cols):
+    matrix = []
+    
+    for i in range(rows):
+        row = list(map(int, input(f"Enter row {i+1}: ").split()))
+        matrix.append(row)
+    return matrix
+
+
+def get_transpose(matrix):
+    transpose = []
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    for i in range(cols):
+        row = []
+        for k in range(rows):
+            row.append(matrix[k][i])
+        transpose.append(row)
+    return transpose
+
+def add_matrices(matrix_1, matrix_2):
+    result = []
+    for i in range(len(matrix_1)):
+        new_row = []
+        for k in range(len(matrix_1[0])):
+            add = matrix_1[i][k] + matrix_2[i][k]
+            new_row.append(add)
+        result.append(new_row)
+    return result
+
+def mult_matrices(matrix_1, matrix_2):
+    result = []
+    for i in range(len(matrix_1)):
+        new_row = []
+        for j in range(len(matrix_2[0])):
+            multiply = 0
+            for k in range(len(matrix_1[0])):
+                multiply += (matrix_1[i][k] * matrix_2[k][j])
+            new_row.append(multiply)
+        result.append(new_row)
+    return result
+
+
+matrix = read_matrix(rows, cols)
+matrix_2 = read_matrix(rows, cols)
+transpose = get_transpose(matrix)
+add = add_matrices(matrix, matrix_2)
+mult = mult_matrices(matrix, matrix_2)
+print(matrix)
+print(transpose)
+print(add)
+print(mult)
