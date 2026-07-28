@@ -39,3 +39,18 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+n = int(input("How many numbers? "))
+
+def stats(n):
+    array = []
+    for i in range(n):
+        value = int(input("Enter a number: "))
+        array.append(value)
+    summ = sum(array)
+    avg = summ / n
+    maxx = max(array)
+    minn = min(array)
+
+    return "Results: \n Sum: {} \n Average: {} \n Maximum: {} \n Minimum: {}".format(summ, avg, maxx, minn)
+
+print(stats(n))
