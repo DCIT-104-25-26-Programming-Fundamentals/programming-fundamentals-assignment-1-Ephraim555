@@ -36,13 +36,14 @@
 # ==========================================================================
 
 def is_prime(num):
-    num = int(input())
     if num <= 1:
        return False
 
-    for i in range(2, n):
+    for i in range(2, num):
         if num % i == 0:
            return "{} is NOT a prime number".format(num)
     else:
         return "{} is a prime number".format(num)
         
+number = int(input("Enter a number: "))
+print(is_prime(number))
