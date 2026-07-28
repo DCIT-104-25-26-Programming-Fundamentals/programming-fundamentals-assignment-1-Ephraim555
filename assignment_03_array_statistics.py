@@ -38,18 +38,31 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
-
+ 
 n = int(input("How many numbers? "))
 
 def stats(n):
+    if n <= 0:
+        return "Error: number must be greater than 0"
     array = []
     for i in range(n):
         value = int(input("Enter a number: "))
         array.append(value)
-    summ = sum(array)
+    summ = 0
+    for x in range(len(array)):
+        summ += array[x]
+
     avg = summ / n
-    maxx = max(array)
-    minn = min(array)
+ 
+    maxx = array[0]
+    for a in range(len(array)):
+        if array[a] > maxx:
+            maxx = array[a]
+
+    minn = array[0]
+    for a in range(len(array)):
+        if array[a] < minn:
+            minn = array[a]
 
     return "Results: \n Sum: {} \n Average: {} \n Maximum: {} \n Minimum: {}".format(summ, avg, maxx, minn)
 
