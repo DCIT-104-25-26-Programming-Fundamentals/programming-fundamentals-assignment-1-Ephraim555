@@ -68,3 +68,86 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add(a,b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero."
+    return a / b 
+
+def mod(a, b):
+    if b == 0:
+        return "Error: Cannot divide by zero."
+    return a % b
+
+def exp(a, b):
+    return a ** b
+
+while True:
+    print("\n============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+    try:
+        choice = int(input("Select an operation (1-7): "))
+    except ValueError:
+        print("Error: Please enter a number from 1 to 7.")
+        continue
+
+    if choice == 7:
+        print("Goodbye!")
+        break
+
+    if choice < 1 or choice > 7:
+        print("Invalid choice. Please select a valid operation.")
+        continue
+
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Error: Please enter valid numbers.")
+        continue
+
+    if choice == 1:
+        result = add(num1, num2)
+        print(f"Result: {num1} + {num2} = {result}")    
+    elif choice == 2:
+        result = sub(num1, num2)
+        print(f"Result: {num1} - {num2} = {result}")
+    elif choice == 3:
+        result = mul(num1, num2)
+        print(f"Result: {num1} * {num2} = {result}")
+    elif choice == 4:
+        result = div(num1, num2)
+
+        if isinstance(result, str):  
+            print(result)
+        else:
+            print(f"Result: {num1} / {num2} = {result:.2f}")
+
+    elif choice == 5:
+        result = mod(num1, num2)
+
+        if isinstance(result, str):
+            print(result)
+        else:
+            print(f"Result: {num1} % {num2} = {result}")
+
+    elif choice == 6:
+        result = exp(num1, num2)
+        print(f"Result: {num1} ** {num2} = {result}")
